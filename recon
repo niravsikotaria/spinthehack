@@ -1,0 +1,74 @@
+chaos.projectdiscovery.io
+
+Subfinder - Amass - crt.sh - all in one-resolving
+
+Subfinder
+----------
+
+subfinder -d vk.com -t 100 -v -o /root.Destop/allsub.txt
+
+cat allsub.txt | wc -l   // for count many subdomain in file
+**********
+
+Amass
+-----------
+amass enum -src -ip -brute -d vk.com -o allsub1.txt
+
+virustotal and censys api key required.
+**************
+
+crt.sh
+-------
+https://raw.githubusercontent.com/hannob/tlshelpers/main/getsubdomain
+
+save code crt.sh
+
+./crt.sh vk.com > allsub3.txt
+
+**************
+
+Sorting 
+--------
+
+sort allsub.txt allsub1.txt allsub3.txt | uniq -u > finalsubdomain.txt
+
+***************
+
+Httpx
+---------
+cat finalsubdomain.txt | httpx -threads 200 | tee -a subdomain.txt
+
+************
+
+Waybackurls
+------------
+
+cat subdomain.txt | waybackurls | tee -a waybackurls.txt
+
+*************
+
+Dirsearch 
+----------
+./dirseach.py -l /root/Desktop/subdomain.txt -t 100 --plain-text-report /root/Desktop/dir.txt
+
+cat dir.txt | grep 403
+
+**********
+
+Nmap
+--------
+nmap -iL/root/Desktop/finalsubdomain.txt -p- --open -sV -oG /root/Desktop/nmap.txt
+
+********
+
+Gf
+---
+
+cat /root/Desktop/waybackurls.txt | gf xss | tee -a /root/Desktop/gfxss.txt
+
+cat /root/Desktop/waybackurls.txt | gf sqli | tee -a /root/Desktop/gfsqli.txt
+
+*******
+
+Subzy | Subdomain Takeover tools
+--------
