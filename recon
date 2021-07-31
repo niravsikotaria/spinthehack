@@ -38,7 +38,7 @@ sort sub1.txt sub2.txt sub3.txt | uniq -u > subdomain.txt
 
 Httpx
 ---------
-cat finalsubdomain.txt | httpx -threads 200 | tee -a subdomain.txt
+cat subdomain.txt | httpx -threads 200 | tee -a finalsubdomain.txt
 
 ************
 
