@@ -23,6 +23,8 @@ https://raw.githubusercontent.com/hannob/tlshelpers/main/getsubdomain
 
 save code crt.sh
 
+chmod +rwx crt.sh
+
 ./crt.sh vk.com > allsub3.txt
 
 **************
