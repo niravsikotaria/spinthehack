@@ -74,3 +74,6 @@ cat /root/Desktop/waybackurls.txt | gf sqli | tee -a /root/Desktop/gfsqli.txt
 
 Subzy | Subdomain Takeover tools
 --------
+
+./subzy -targets subdomain.txt -concurrency 100 | tee -a subzy.txt
+
