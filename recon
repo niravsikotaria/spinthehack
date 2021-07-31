@@ -12,7 +12,7 @@ cat allsub.txt | wc -l   // for count many subdomain in file
 
 Amass
 -----------
-amass enum -src -ip -brute -d vk.com -o allsub1.txt
+amass enum -brute -d vk.com -o allsub1.txt
 
 virustotal and censys api key required.
 **************
