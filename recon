@@ -5,7 +5,7 @@ Subfinder - Amass - crt.sh - all in one-resolving
 Subfinder
 ----------
 
-subfinder -d vk.com -t 100 -v -o /root.Destop/allsub.txt
+subfinder -d vk.com -t 100 -v -o /home/kali/Desktop/mrecon/site.com/sub1.txt
 
 cat allsub.txt | wc -l   // for count many subdomain in file
 **********
