@@ -51,7 +51,7 @@ cat subdomain.txt | waybackurls | tee -a waybackurls.txt
 
 Dirsearch 
 ----------
-./dirseach.py -l /root/Desktop/subdomain.txt -t 100 --plain-text-report /root/Desktop/dir.txt
+./dirsearch.py -l /root/Desktop/subdomain.txt -t 100 --plain-text-report /root/Desktop/dir.txt
 
 cat dir.txt | grep 403
 
