@@ -5,14 +5,14 @@ Subfinder - Amass - crt.sh - all in one-resolving
 Subfinder
 ----------
 
-subfinder -d vk.com -t 100 -v -o /home/kali/Desktop/mrecon/site.com/sub1.txt
+subfinder -d vk.com -t 100 -v -o /home/kali/Desktop/mrecon/site.com/sub.txt
 
 cat allsub.txt | wc -l   // for count many subdomain in file
 **********
 
 Amass
 -----------
-amass enum -brute -d vk.com -o allsub1.txt
+amass enum -brute -d vk.com -o sub2.txt
 
 virustotal and censys api key required.
 **************
@@ -25,14 +25,14 @@ save code crt.sh
 
 chmod +rwx crt.sh
 
-./crt.sh vk.com > allsub3.txt
+./crt.sh vk.com > sub3.txt
 
 **************
 
 Sorting 
 --------
 
-sort allsub.txt allsub1.txt allsub3.txt | uniq -u > finalsubdomain.txt
+sort sub1.txt sub2.txt sub3.txt | uniq -u > subdomain.txt
 
 ***************
 
